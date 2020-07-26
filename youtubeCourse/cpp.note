@@ -1,0 +1,459 @@
+/*
+#include <iostream>
+
+using namespace std;
+
+int sum(int a, int b);
+void printSomething();
+
+class newjoysClass{
+    public:
+        int formula(int a, int b, int c, int d){
+            return add(multi(a,b), multi(c,d));
+        }
+        void done(){
+            cout << "Computing done! \n";
+        }
+
+    private:
+        int add(int a, int b){
+            return a+b;
+        }
+        int multi(int a, int b){
+            return a*b;
+        }
+};
+
+int main()
+{
+
+    int a, b;
+    cout << "Please input a number! \n";
+    cin >> a;
+
+    cout << "Please input another number! \n";
+    cin >> b;
+
+    int ss = sum(a, b);
+    cout << ss << endl;
+    printSomething();
+
+    newjoysClass newjoysObject;     //class_name object_name, declare an object
+    int result = newjoysObject.formula(4,5,2,11);
+    newjoysObject.done();
+    cout << "result = " << result << endl;
+
+    return 0;
+}
+
+int sum(int a, int b)
+{
+    int ss = a + b;
+    return ss;
+}
+
+void printSomething()
+{
+    cout << "Everything is fine! \n";
+}
+
+
+
+class newjoysClass{
+    public:
+        newjoysClass(string ob){
+            setName(ob);
+        }
+        void setName(string n){
+            name = n;
+        }
+        string getName(){
+            return name;
+        }
+    private:
+        string name;
+};
+
+int main()
+{
+    newjoysClass newjoysObject("String from Class Constructor...");
+
+    cout << newjoysObject.getName() << endl;
+
+    return 0;
+}
+*/
+
+
+    /*int age;
+    int ageTotal = 0;
+    int numberOfPeople =0;
+    cout << "Enter first persons age or -1 to quit: " << endl;
+    cin >> age;
+
+    while(age!=-1){
+        numberOfPeople ++;
+        ageTotal += age;
+        cout << "Enter next persons age(-1 to quit): " << endl;
+        cin >> age;
+    }
+    cout << "Number of people is " << numberOfPeople << endl;
+    if(numberOfPeople!=0){
+        cout << "Total age is " << ageTotal << "\nAverage age is " << ageTotal/numberOfPeople << endl;
+    }*/
+
+
+    /*int num = 10;
+    cout << num << endl;
+    cout << num-- <<endl;
+    cout << num << endl;
+    */
+
+    /*float total;
+    float sum = 10000;
+    float r = .02/365;
+
+    for(int day=1; day <= 14; day++){
+        total = sum * pow((1+r),day);
+        cout << "Day " << day << " : " << total << endl;
+    }
+    */
+
+
+    /*int i = 99;
+    do{
+        cout << i << endl;
+        i++;
+    }while(i<=10);
+    */
+
+        /*int age = 10;
+    switch(age){
+        case 16:
+            cout << "you can drive!\n";
+            break;
+        case 18:
+            cout << "you can buy lotto!\n";
+            break;
+        case 21:
+            cout << "you can drink beer! \n";
+            break;
+        default:
+            cout << "you get nothing! \n";
+    }
+    */
+
+
+    /*int age = 12;
+    int money = 1000;
+    if(age > 18 || money > 100){    //&& And, || Or.
+        cout << "You are allowed in!\n";
+    }
+    else{
+        cout << "Get out!\n";
+    }*/
+
+    /*    cout << time(0)/3600/24/365 << endl;
+    time_t now = time(0);
+    char* dt = ctime(&now);
+    cout << "Right now, date and time: " << dt << endl;
+    */
+
+    /*    srand(time(0));
+    for(int i=1;i<=25;i++){
+        cout << i << " ---> " << float(rand()%100)/100.0 << endl;
+    }
+    */
+
+
+/*int volume(int l=1, int w=1, int h=1);  //function with default value
+
+int main()
+{
+    //burrito burritosObject;
+
+    cout << volume(12,16) << endl;  //only overwrite first 2 value
+
+    return 0;
+}
+
+int volume(int l, int w, int h){
+    return(l*w*h);
+}
+*/
+
+
+/*int tuna = 99;
+
+int main()
+{
+    //burrito burritosObject;
+
+    int tuna = 20;
+
+    cout << ::tuna << endl;     //::before a variable means global variable
+
+    return 0;
+}*/
+
+
+/*
+void printNumber(float n);
+void printNumber(int n);
+void printNumber(int n, float m);
+
+int main()
+{
+    //burrito burritosObject;
+
+    int a = 12;
+    float b = 2.71828;
+    printNumber(a);
+    printNumber(b);
+    printNumber(a, b);
+
+    return 0;
+}
+
+void printNumber(float n){
+    cout << n << endl;
+}
+
+void printNumber(int n){
+    cout << n << endl;
+}
+
+void printNumber(int n, float m){
+    cout << n << ", " << m << endl;
+}
+*/
+
+/*int factorialFinder(int x){
+    int fac = 1;
+    while(x!=0){
+        fac *= x;
+        x--;
+    }
+    return fac;
+}*/
+
+/*
+//recursion
+int factorialFinder(int x){
+    if(x==1){
+        return 1;   //base case, stop criteria
+    }else{
+        return x * factorialFinder(x-1);
+    }
+}*/
+
+/*void fibonacci(int x){
+    int a, b, c;
+    a = 1;
+    b = 1;
+    cout << a << " " << b << " ";
+    for(int itr=0; itr<x-1; itr++){
+        c=a+b;
+        cout << c << " ";
+        a=b;
+        b=c;
+    }
+}*/
+
+/*
+//int joy[6] = {87, 32, 84, 12, 19};
+
+    int joy[6];
+    int len = sizeof(joy) / sizeof(joy[0]);
+
+    for(int i=0; i<len; i++){
+        time_t now = time(0);
+        srand(now+i);
+        joy[i] = rand()%100;
+        cout << joy[i] << " ";
+    }
+    */
+
+/*
+void printArray(int arr[]);
+
+int main()
+{
+    //burrito burritosObject;
+
+    int joy[7] = {1,1,2,3,5,8,13};
+    cout << "joy: " << sizeof(joy) << endl;
+    int len = sizeof(joy) / sizeof(joy[0]);
+    cout << "Length of this Array = " << len << endl;
+
+    printArray(joy);
+
+    return 0;
+}
+//数组作为参数传递时，退化为指针，此时siyeof获取的其实是指针的长度
+//所以数组长度应同样作为参数传入；或者用宏定义来解决
+void printArray(int arr[]){
+    cout << sizeof(arr) << endl;
+    cout << sizeof(arr[0]) << endl;
+    int len = sizeof(arr) / sizeof(arr[0]);
+    cout << "Length of this Array = " << len << endl;
+    for(int i=0; i<len; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+*/
+
+/*
+#define ARR_LENGTH(arr) sizeof(arr)/sizeof(arr[0])
+
+using namespace std;
+
+void printArray(int arr[], int len);
+
+int main()
+{
+    int joy[7] = {1,1,2,3,5,8,13};
+
+    int length = ARR_LENGTH(joy);
+    printArray(joy, length);
+}
+
+void printArray(int arr[], int len){
+    for(int i=0; i<len; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+*/
+
+/*int main()
+{
+    int joy[2][4] = {{2,7,5,9},{4,8,2,6}};
+    //2,7,5,9
+    //4,8,2,6
+
+    //cout << sizeof(joy[1]) << endl;
+
+    int w = sizeof(joy[0]) / sizeof(joy[0][0]);
+    int h = sizeof(joy) / sizeof(joy[0]);
+
+    for(int i=0; i< h; i++){
+        for(int j=0; j< w; j++){
+            cout << joy[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    return 0;
+}
+*/
+
+/*
+    int fish = 5;
+    cout << &fish << endl;
+
+    int *fishPointer;
+    fishPointer = &fish;
+    cout << fishPointer << endl;
+    */
+
+/*
+void passByValue(int x);
+void passByReference(int *x);
+
+int main()
+{
+    int betty = 6;
+    int sandy = 6;
+
+    passByValue(betty);
+    passByReference(&sandy);
+
+    cout << "betty is now(passByValue): " << betty << endl;
+    cout << "sandy is now(passByReference): " << sandy << endl;
+
+    return 0;
+}
+
+void passByValue(int x){
+    x = 99;
+}
+
+void passByReference(int *x){
+    *x = 99;
+}
+*/
+
+/*
+void passByValue(int x);
+void passByReference(int *x);
+
+int main()
+{
+    int betty = 6;
+    int sandy = 6;
+
+    passByValue(betty);
+    passByReference(&sandy);
+
+    cout << "betty is now(passByValue): " << betty << endl;
+    cout << "sandy is now(passByReference): " << sandy << endl;
+
+    int *pointerA;
+    pointerA = &betty;
+    cout << pointerA << endl << *pointerA << endl;
+
+    return 0;
+}
+
+void passByValue(int x){
+    x = 99;
+}
+
+void passByReference(int *x){   //取sandy的地址传入x，*x取sandy地址上的值，将该地址上的值赋为99
+    *x = 99;        //由于此处要用指针，前面必须事先声明指针
+}
+*/
+
+
+/*char n = 'j';
+    int k = 12;
+    double nn[] = {7.2,6.1,2.0,9,5,1,6,0,3};
+    cout << k << endl;
+    cout << sizeof(k) << "     " << sizeof(n) << endl;
+    cout << sizeof(nn) << "   " << sizeof(nn)/sizeof(nn[0]) << endl;
+    printf("hello! \n"); */
+
+/*void pointerDemo(){
+    double joy[7];
+    double *pp0 = &joy[0];
+    *pp0 = 8.2;
+    *(pp0+1) = 9.0;
+    pp0 += 6;   //内存地址加6 x length(joy[0])
+    *pp0 = 66.66;
+    printArray(joy, 7);
+}*/
+
+/*    tom tomObject;
+    tomObject.pointerTest();
+    tomObject.fibonacci(12);
+
+    tom *tomPointer = &tomObject;
+    tomPointer->pointerTest();
+    tomPointer->fibonacci(6);
+    */
+
+/*
+    tom tomObject;
+    tomObject.fibonacci(16);
+
+    tom *tomPointer = &tomObject;
+    tomPointer->pointerTest();
+    */
+
+/*    tom tomConst(22, 66);
+    tomConst.printConst();
+    */
+
