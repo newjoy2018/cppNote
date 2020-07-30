@@ -1,0 +1,63 @@
+# NVIDIA驱动安装
+# https://blog.csdn.net/CosmosHua/article/details/76644029
+# 1. 先卸载原有N卡驱动
+#for case1: original driver installed by apt-get:
+sudo apt-get remove --purge nvidia*
+#for case2: original driver installed by runfile:
+sudo chmod +x *.run
+sudo ./NVIDIA-Linux-x86_64-384.59.run --uninstall
+
+# 2. 禁用nouveau驱动
+# 禁用nouveau第三方驱动，之后也不需要改回来
+sudo gedit /etc/modprobe.d/blacklist.conf
+在最后添加
+blacklist nouveau
+options nouveau modeset=0
+保存
+sudo update-initramfs -u
+重启后，执行：lsmod | grep nouveau。如果没有屏幕输出，说明禁用nouveau成功。
+
+# 3. 禁用X-Window服务
+Ctrl+Alt+F2进入命令行
+sudo service lightdm stop #这会关闭图形界面，但不用紧张
+完事后sudo service lightdm start ，然后按Ctrl-Alt+F7即可恢复到图形界面
+
+# 4. 命令行安装驱动
+#给驱动run文件赋予执行权限：
+sudo chmod +x 文件名.run
+#后面的参数非常重要，不可省略：
+sudo ./文件名.run –no-x-check -no-nouveau-check -no-opengl-files
+# 重点是后面的参数
+
+#----------------------------------------------------
+# CUDA安装
+# https://developer.nvidia.com/cuda-toolkit-archive
+sudo ./文件名.run --no-opengl-libs
+# ！！不装驱动！！
+CUDA Sample测试 
+#编译并测试设备 deviceQuery：
+cd /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
+sudo make
+./deviceQuery
+测试结果得到pass即成功
+#----------------------------------------------------
+# CuDNN安装按官方教程来
+# https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
+下载解压
+tar -xzvf cudnn-10.2-linux-x64-v7.6.5.32.tgz
+复制文件并更改权限
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+验证
+# https://blog.csdn.net/caicaiatnbu/article/details/87626491
+sudo dpkg -i libcudnn7_7.4.2.24-1+cuda9.0_amd64.deb
+sudo dpkg -i libcudnn7-dev_7.4.2.24-1+cuda9.0_amd64.deb
+sudo dpkg -i libcudnn7-doc_7.4.2.24-1+cuda9.0_amd64.deb
+
+cp -r /usr/src/cudnn_samples_v7/ /home/wdong/
+cd /home/wdong/cudnn_samples_v7/mnistCUDNN
+make clean && make
+./mnistCUDNN
+结果为passed即为成功
+#----------------------------------------------------
