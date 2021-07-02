@@ -60,7 +60,7 @@ cd ..
 
 
 ### 6. Test your own images with this trained model
-Run the following commands to test your own images. `chmod +x darknet/darknet` is used to make the darknet executable. `example.jpg` is your own images to be detected.
+Run the following commands to test your own images. `chmod +x darknet/darknet` is used to make the darknet executable. `example.jpg` is your own images to be detected. 
 ```sh
 chmod +x darknet/darknet
 ./darknet/darknet detector test cfg/obj.data cfg/yolov4.cfg weights/yolov4_CM.weights -ext_output example.jpg
