@@ -24,7 +24,7 @@ sed -i 's/OPENCV=0/OPENCV=1/' Makefile
 ```
 
 ### 3. make the Darknet
-Run `make` in the Terminal:
+Run `make` in the Terminal. This step may need more than one minute.
 ```sh
 make
 ```
